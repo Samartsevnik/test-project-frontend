@@ -1,0 +1,32 @@
+
+.combinedInput {
+  width: 80% !important;
+  border-right-width: 0;
+}
+
+.combinedSelector {
+  border-left-width: 0 !important;
+  position:relative;
+  width: 20%;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.label {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+
+  .combinedInput {
+    width: 60% !important;
+  }
+
+  .combinedSelector {
+    width: 40%;
+  }
+}
+

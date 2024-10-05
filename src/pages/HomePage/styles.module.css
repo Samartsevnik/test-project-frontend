@@ -1,4 +1,31 @@
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.title {
+  font-size: 50px;
+  font-weight: 300;
+  line-height: 60px;
+  margin-bottom: 20px;
+}
+
+.subTitle {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 20px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    margin-top: 20px;
+    display: block;
+  }
 }

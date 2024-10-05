@@ -8,7 +8,8 @@ function App() {
       theme={{
         token: {
           colorPrimary: '#137E6E',
-          borderRadius: 2
+          borderRadius: 5,
+          fontSize: 16
         }
       }}
     >

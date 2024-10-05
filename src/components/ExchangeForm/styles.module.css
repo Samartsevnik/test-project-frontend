@@ -1,0 +1,50 @@
+.iconWrapper {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: #137E6E;
+}
+
+.error {
+  color: red;
+  position: absolute;
+}
+
+.icon {
+  font-size: 24px;
+  padding: 10px;
+}
+
+.submit {
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.addressWrapper {
+  margin-top: 30px;
+  align-items: flex-end;
+}
+
+@media (max-width: 768px) {
+  .iconWrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0;
+  }
+
+  .icon {
+    transform: rotate(90deg);
+  }
+
+  .submit {
+    margin-top: 10px;
+  }
+
+  .error {
+    position: static;
+  }
+
+  .addressWrapper {
+    margin-top: 40px;
+  }
+}
