@@ -1,16 +1,19 @@
-import React, {useState} from 'react';
-import { Input, Select } from 'antd';
+import React, {ReactNode, useState} from 'react';
+import {Input, Select} from 'antd';
 import styles from './styles.module.css'
 import cx from 'classnames'
 
-interface InputSelectionProps {
+type Option = { value: string; label: ReactNode | string;};
+
+type InputSelectionProps = {
   value: number | string;
   onChange: (value: string) => void;
-  options: Array<{ value: string; label: string }>;
+  options: Array<Option>;
   className?: string;
 
-  selectorValue: string;
+  selectorValue: { value: string; };
   selectorOnChange: (value: string) => void;
+  labelInValue?: boolean;
 }
 
 export const InputSelection: React.FC<InputSelectionProps> = ({
@@ -18,7 +21,7 @@ export const InputSelection: React.FC<InputSelectionProps> = ({
   onChange,
   options,
   className = '',
-
+  labelInValue = false,
   selectorValue,
   selectorOnChange,
   ...props
@@ -30,7 +33,7 @@ export const InputSelection: React.FC<InputSelectionProps> = ({
   };
 
   return (
-    <Input.Group compact className={cx(className, styles.inputGroup)}>
+    <Input.Group compact className={className}>
       {!isSelectOpen && (
         <Input
           {...props}
@@ -43,11 +46,11 @@ export const InputSelection: React.FC<InputSelectionProps> = ({
         showSearch
         value={selectorValue}
         options={options}
-        onChange={(val) => selectorOnChange(val)}
+        onChange={(val) => selectorOnChange(val.value)}
         className={cx(styles.combinedSelector, {[styles.fullWidth]: isSelectOpen})}
         onDropdownVisibleChange={handleDropdownVisibleChange}
         open={isSelectOpen}
-
+        labelInValue={labelInValue}
       />
     </Input.Group>
   );

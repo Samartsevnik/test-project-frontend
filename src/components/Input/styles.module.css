@@ -19,6 +19,19 @@
   margin-bottom: 10px;
 }
 
+.customLabel {
+  display: flex;
+  align-items: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+:global(.ant-select-open .ant-select-selection-item .icon) {
+  display: none;
+}
+
+
 @media (max-width: 768px) {
 
   .combinedInput {
